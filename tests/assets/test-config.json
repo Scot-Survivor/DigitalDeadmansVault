@@ -1,0 +1,20 @@
+{
+    "base_url": "http://example.com",
+    "log_level": "DEBUG",
+    "file_save_path": "./test-files",
+    "database": {
+        "url": "sqlite:///:memory:"
+    },
+    "auth": {
+        "secret_key": "my_secret_key",
+        "access_key": "my_access_key",
+        "hmac_algorithm": "sha256",
+        "nonce_length": 16,
+        "nonce_cache_ttl": 5
+    },
+    "checksum_algorithms": [
+        "sha512",
+        "sha256",
+        "md5"
+    ]
+}
