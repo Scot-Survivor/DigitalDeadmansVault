@@ -1,7 +1,6 @@
-import yaml
-
 from enum import Enum
 from typing import Any
+import yaml
 
 
 class SerializableEnum(Enum):

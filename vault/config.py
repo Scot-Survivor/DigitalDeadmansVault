@@ -1,9 +1,9 @@
 import os
 
+from typing import AnyStr, List
 from pydantic import BaseModel
-from .enums.auth import HMACAlgorithm
-from .enums.docs import DocumentChecksumAlgorithm
-from typing import AnyStr, Any, Dict, List, Union
+from vault.enums.auth import HMACAlgorithm
+from vault.enums.docs import DocumentChecksumAlgorithm
 
 
 def get_main_config(save_path=None) -> "VaultConfig":

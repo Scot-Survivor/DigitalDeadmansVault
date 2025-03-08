@@ -1,9 +1,8 @@
-from typing import Optional, TYPE_CHECKING
-from sqlmodel import Field, SQLModel, Relationship
-
+from typing import TYPE_CHECKING, Optional
+from sqlmodel import Field, Relationship, SQLModel
 
 if TYPE_CHECKING:
-    from .docs import Document
+    from vault.docs import Document
 
 
 class Checksum(SQLModel, table=True):

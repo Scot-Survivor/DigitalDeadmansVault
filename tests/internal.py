@@ -1,14 +1,13 @@
 import os
+import random
 import shutil
 import string
-import random
 import hashlib
-import unittest
 import datetime
-
-from vault.main import app
+import unittest
 from fastapi.testclient import TestClient
-from vault.config import VaultConfig, get_main_config
+from vault.main import app
+from vault.config import get_main_config
 
 
 class AbstractTest(unittest.TestCase):

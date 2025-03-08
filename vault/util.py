@@ -1,10 +1,10 @@
 import os
 import uuid
-import string
 import random
+import string
 import datetime
 
-from typing import Union, AnyStr
+from typing import AnyStr, Union
 from vault.config import get_main_config
 
 BytesLike = Union[bytes, bytearray, memoryview]

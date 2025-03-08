@@ -3,12 +3,12 @@ import logging
 import datetime
 import cachetools
 
-from ..models.auth import HMACObject
-from ..config import get_main_config
-from ..enums.auth import HMACAlgorithm
-from fastapi import Request, HTTPException
+from fastapi import HTTPException, Request
 from fastapi.security.http import HTTPBase
 from fastapi.openapi.models import HTTPBase as HTTPBaseModel
+from vault.config import get_main_config
+from vault.enums.auth import HMACAlgorithm
+from vault.models.auth import HMACObject
 
 config = get_main_config()
 

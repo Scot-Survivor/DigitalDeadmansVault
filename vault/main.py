@@ -1,13 +1,13 @@
 import os
-import fastapi
 import logging
+import fastapi
 
 from fastapi import FastAPI
 from sqlmodel import SQLModel
+from fastapi_pagination import add_pagination
+from vault.config import get_main_config
 from vault.models import engine
 from vault.routers import auth, docs
-from vault.config import get_main_config
-from fastapi_pagination import add_pagination
 
 config = get_main_config()
 logging.basicConfig(level=logging.DEBUG)

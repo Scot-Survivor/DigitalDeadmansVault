@@ -1,10 +1,9 @@
+from typing import Any, Generator
+from sqlmodel import Session, create_engine
+from vault.config import get_main_config
 from vault.models.auth import *
 from vault.models.docs import *
 from vault.models.util import *
-
-from typing import Any, Generator
-from ..config import get_main_config
-from sqlmodel import create_engine, Session
 
 config = get_main_config()
 

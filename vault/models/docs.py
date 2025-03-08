@@ -1,11 +1,11 @@
 import datetime
 
+from typing import TYPE_CHECKING, List, Optional
+from sqlmodel import Field, Relationship, SQLModel
 from vault.util import generate_uuid, get_utc
-from typing import List, TYPE_CHECKING, Optional
-from sqlmodel import Field, SQLModel, Relationship
 
 if TYPE_CHECKING:
-    from .util import Checksum
+    from vault.util import Checksum
 
 
 class Document(SQLModel, table=True):

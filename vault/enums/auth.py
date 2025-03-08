@@ -1,5 +1,4 @@
 import hashlib
-from enum import Enum
 from vault.enums.internal import SerializableEnum
 
 

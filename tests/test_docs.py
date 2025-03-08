@@ -1,7 +1,6 @@
 import hashlib
 import os.path
 import mimetypes
-
 from tests.internal import AbstractTest
 
 

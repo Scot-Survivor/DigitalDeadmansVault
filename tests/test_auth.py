@@ -1,6 +1,5 @@
-import datetime
 import hashlib
-
+import datetime
 from tests.internal import AbstractTest
 from vault.models.auth import HMACObject
 

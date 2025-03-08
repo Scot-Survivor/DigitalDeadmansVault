@@ -1,6 +1,6 @@
 from typing import Annotated
 from fastapi import APIRouter
-from ..dependencies import HMACAuthDepends
+from vault.dependencies import HMACAuthDepends
 
 router = APIRouter(
     prefix="/auth",

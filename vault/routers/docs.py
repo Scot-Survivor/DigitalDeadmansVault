@@ -1,11 +1,11 @@
 from typing import Optional
-from sqlmodel import Session
-from vault.util import save_a_file
 from fastapi import APIRouter, Request
+from sqlmodel import Session
+from fastapi_pagination import Page, paginate
+from vault.util import save_a_file
+from vault.config import get_main_config
 from vault.models.docs import Document
 from vault.models.util import Checksum
-from vault.config import get_main_config
-from fastapi_pagination import Page, paginate
 from vault.dependencies import HMACAuthDepends, SessionDepends
 
 config = get_main_config()

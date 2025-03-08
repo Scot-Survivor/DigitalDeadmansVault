@@ -1,6 +1,6 @@
 from typing import AnyStr
 from pydantic import BaseModel
-from ..enums.auth import HMACAlgorithm
+from vault.enums.auth import HMACAlgorithm
 
 
 class HMACObject(BaseModel):
