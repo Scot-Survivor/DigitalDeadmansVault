@@ -5,3 +5,16 @@ skip-string-normalization = true
 safe = true
 workers = 2
 verbose = true
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
