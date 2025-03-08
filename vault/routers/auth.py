@@ -11,5 +11,4 @@ router = APIRouter(
 
 @router.get("/protected", dependencies=[HMACAuthDepends])
 def protected(access_key: Annotated[str, HMACAuthDepends]):
-    return {"message": "This is a protected endpoint",
-            "access_key": access_key}
+    return {"message": "This is a protected endpoint", "access_key": access_key}

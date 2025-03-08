@@ -8,7 +8,6 @@ class HMACObject(BaseModel):
     message: AnyStr
     algorithm: HMACAlgorithm
 
-
     @property
     def signature(self) -> AnyStr:
         return self.algorithm.hash(self.message)

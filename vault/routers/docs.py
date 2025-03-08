@@ -10,10 +10,7 @@ from vault.dependencies import HMACAuthDepends, SessionDepends
 config = get_main_config()
 
 router = APIRouter(
-    prefix="/docs",
-    tags=["docs"],
-    responses={404: {"description": "Not found"}},
-    dependencies=[HMACAuthDepends]
+    prefix="/docs", tags=["docs"], responses={404: {"description": "Not found"}}, dependencies=[HMACAuthDepends]
 )
 
 

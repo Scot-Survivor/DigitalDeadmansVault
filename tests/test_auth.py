@@ -8,9 +8,7 @@ from vault.models.auth import HMACObject
 class TestAuth(AbstractTest):
 
     def _calculate_signature(self, message: str) -> str:
-        hmac_obj = HMACObject(key=self.secret_key,
-                              message=message,
-                              algorithm=self.algorithm)
+        hmac_obj = HMACObject(key=self.secret_key, message=message, algorithm=self.algorithm)
         return hmac_obj.signature
 
     def test_failed_auth(self):
@@ -30,7 +28,7 @@ class TestAuth(AbstractTest):
             "X-TXC-Nonce": nonce,
             "X-TXC-Timestamp": str(timestamp),
             "Content-MD5": md5,
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
         }
         response = self.client.get("/auth/protected", headers=headers)
         self.assertTrue(response.status_code == 200, f"Response: {response.json()}")

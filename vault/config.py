@@ -6,7 +6,7 @@ from .enums.docs import DocumentChecksumAlgorithm
 from typing import AnyStr, Any, Dict, List, Union
 
 
-def get_main_config(save_path = None) -> "VaultConfig":
+def get_main_config(save_path=None) -> "VaultConfig":
     if save_path is None:
         save_path = os.environ.get("CONFIG_FILE_PATH", "config.json")
     if os.path.exists(save_path):
@@ -66,5 +66,7 @@ class VaultConfig(Config):
     file_save_path: AnyStr = "./files"
     database: DatabaseConfig = DatabaseConfig()
     auth: AuthConfig = AuthConfig()
-    checksum_algorithms: List[DocumentChecksumAlgorithm] = [DocumentChecksumAlgorithm.SHA256,
-                                                            DocumentChecksumAlgorithm.MD5]
+    checksum_algorithms: List[DocumentChecksumAlgorithm] = [
+        DocumentChecksumAlgorithm.SHA256,
+        DocumentChecksumAlgorithm.MD5,
+    ]

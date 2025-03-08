@@ -13,8 +13,9 @@ from vault.config import VaultConfig, get_main_config
 
 class AbstractTest(unittest.TestCase):
     def setUp(self):
-        os.environ['CONFIG_FILE_PATH'] = os.path.join(os.path.dirname(os.path.realpath(__file__)),
-                                                      'assets/test-config.json')
+        os.environ['CONFIG_FILE_PATH'] = os.path.join(
+            os.path.dirname(os.path.realpath(__file__)), 'assets/test-config.json'
+        )
         os.makedirs("./testing-files", exist_ok=True)
         self.client = TestClient(app)
         self.config = get_main_config()
@@ -71,6 +72,6 @@ class AbstractTest(unittest.TestCase):
             'X-TXC-Nonce': nonce,
             'X-TXC-Timestamp': str(timestamp),
             'Content-MD5': md5,
-            'Content-Type': content_type
+            'Content-Type': content_type,
         }
         return headers
