@@ -1,0 +1,7 @@
+[tool.black]
+line-length = 120
+target-version = ['py313']
+skip-string-normalization = true
+safe = true
+workers = 2
+verbose = true
