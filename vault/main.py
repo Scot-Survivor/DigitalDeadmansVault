@@ -2,17 +2,19 @@ import os
 import fastapi
 import logging
 
-from .models import engine
 from fastapi import FastAPI
 from sqlmodel import SQLModel
-from .config import get_main_config
-from .routers import auth, docs
+from vault.models import engine
+from vault.routers import auth, docs
+from vault.config import get_main_config
+from fastapi_pagination import add_pagination
 
 config = get_main_config()
 logging.basicConfig(level=logging.DEBUG)
 app = FastAPI()
 app.include_router(auth.router)
 app.include_router(docs.router)
+add_pagination(app)  # include pagination support
 
 
 @app.on_event("startup")

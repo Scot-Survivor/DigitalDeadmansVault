@@ -1,11 +1,10 @@
 import os
-import abc
 import uuid
 import string
 import random
+import datetime
 
-from abc import abstractmethod
-from typing import Union, AnyStr, Any
+from typing import Union, AnyStr
 from vault.config import get_main_config
 
 BytesLike = Union[bytes, bytearray, memoryview]
@@ -32,3 +31,7 @@ async def save_a_file(file: BytesLike, filename: AnyStr) -> AnyStr:
     with open(save_path, "wb") as f:
         f.write(file)
     return save_path
+
+
+def get_utc() -> datetime.datetime:
+    return datetime.datetime.now(datetime.UTC)

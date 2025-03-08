@@ -5,6 +5,7 @@ from fastapi import APIRouter, Request
 from vault.models.docs import Document
 from vault.models.util import Checksum
 from vault.config import get_main_config
+from fastapi_pagination import Page, paginate
 from vault.dependencies import HMACAuthDepends, SessionDepends
 
 config = get_main_config()
@@ -42,3 +43,10 @@ async def create_doc(request: Request, session: Session = SessionDepends) -> Doc
     session.commit()
 
     return doc
+
+
+@router.get("/list", response_model=Page[Document.id])
+async def list_docs(session: Session = SessionDepends) -> Page[Document.id]:
+    """Get a paginated list of document IDs"""
+    document_ids = Document.select(Document.id).order_by(Document)
+    return paginate(session, document_ids)
