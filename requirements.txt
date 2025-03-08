@@ -1,0 +1,5 @@
+fastapi~=0.115.6
+PyYAML~=6.0.2
+pydantic~=2.10.4
+sqlmodel~=0.0.22
+cachetools~=5.5.0
