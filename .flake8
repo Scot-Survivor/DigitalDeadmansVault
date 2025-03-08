@@ -1,0 +1,4 @@
+[flake8]
+max-line-length = 120
+ban-relative-imports = true
+ignore = F403, F405

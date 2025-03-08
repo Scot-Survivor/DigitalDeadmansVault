@@ -18,3 +18,25 @@ exclude = '''
   | dist
 )/
 '''
+[tool.isort]
+profile = "black"
+line_length = 120
+length_sort = true
+verbose = true
+group_by_package = true
+no_inline_sort = true
+color_output = true
+lines_between_types = 1
+only_modified = true
+src_paths = ["tests", "vault"]
+sections = "FUTURE,STDLIB,THIRDPARTY,FIRSTPARTY,LOCALFOLDER"
+no_lines_before = "THIRDPARTY,FIRSTPARTY,LOCALFOLDER"
+
+[tool.autoflake]
+remove_all_unused_imports = true
+remove_unused_variables = true
+remove_unused_variables_ignore = "_(?i)"
+ignore_init_module_imports = true
+in_place = true
+recursive = true
+expand_star_imports = true
