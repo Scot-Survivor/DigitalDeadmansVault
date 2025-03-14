@@ -1,7 +1,7 @@
 import glob
-import colorama
 
 from os.path import basename, dirname, isfile, join
+import colorama
 
 colorama.init()
 modules = glob.glob(join(dirname(__file__), "*//*.py"), recursive=True)

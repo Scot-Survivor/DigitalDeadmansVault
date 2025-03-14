@@ -2,8 +2,8 @@ import os
 import logging
 
 from typing import AnyStr, List
-from pydantic import BaseModel, computed_field
-from colorama import Fore, Back, Style
+from colorama import Fore, Style
+from pydantic import BaseModel
 from vault.enums.auth import HMACAlgorithm
 from vault.enums.docs import DocumentChecksumAlgorithm
 
@@ -42,6 +42,7 @@ class AuthConfig(Config):
     """
     Holds all configuration for the authentication
     """
+
     _has_logged_warning: bool = False
     enabled: bool = True
     secret_key: AnyStr = "my_secret_key"
@@ -54,8 +55,10 @@ class AuthConfig(Config):
         super().__init__(*args, **kwargs)
         if not self.enabled and not self._has_logged_warning:
             self._has_logged_warning = True
-            logging.warning(f"{Fore.RED}{Style.BRIGHT}AUTHENTICATION HAS BEEN DISABLED, "
-                            f"THIS SHOULD ONLY HAPPEN IN DEVELOPMENT{Style.RESET_ALL}")
+            logging.warning(
+                f"{Fore.RED}{Style.BRIGHT}AUTHENTICATION HAS BEEN DISABLED, "
+                f"THIS SHOULD ONLY HAPPEN IN DEVELOPMENT{Style.RESET_ALL}"
+            )
 
 
 class DatabaseConfig(Config):
