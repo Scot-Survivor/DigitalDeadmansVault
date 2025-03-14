@@ -86,6 +86,10 @@ class HMACAuth(HTTPBase):
                 raise self.exception
 
     async def __call__(self, request: Request) -> str | None:  # will return access_key
+        if not config.auth.enabled:
+            header_parts = request.headers.get("Authorization").strip().split(":")
+            access_key = header_parts[1].strip()
+            return access_key
         self._validate_headers(request)
         # breakpoint()
         await self._validate_md5(request)
